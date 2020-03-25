@@ -244,20 +244,34 @@ NrComplex & VectorNrComplexe :: operator[](int i)
 
 }
 
+void afisare(int n)
+{
+    std::cout<<"Programul citeste "<<n<<" vectori:"<<'\n';
+    VectorNrComplexe v[n];
+    for(int i=0;i<n;++i)
+    {
+        cout<<"nr componente vector "<<i+1<<": "; cin>>v[i];
+        cout<<"Vectorul "<<i+1<<":\n"<<v[i];
+    }
+}
 
 int main()
 {
 
     //Testarea clasei NrComplex:
 
-    //   NrComplex a,b;
-    //   cout<<"a= ";  cin>>a;
-    //   cout<<"b= ";  cin>>b;
-    //   cout<<"a+b= "<<a+b;
-    //   cout<<"a*b= "<<a*b;
+//       NrComplex a,b;
+//       cout<<"a= ";  cin>>a;
+//       cout<<"b= ";  cin>>b;
+//       cout<<"a+b= "<<a+b;
+//       cout<<"a*b= "<<a*b;
 
 
    int i;
+   int n;
+   cout<<"Introduceti cati vectori doriti sa cititi: "; cin>>n;
+   afisare(n);
+
    VectorNrComplexe vect,v,t,sol;
 
    cout<<"Introduceti vectorul pentru care doriti sa se aplice Suma, respectiv Sortarea dupa module:\n\n";
@@ -265,11 +279,12 @@ int main()
     vect.citire();
 
 //   cout<<"vect= ";  cin>>vect;
-
-   for(i=0;i<vect.get_nrcomponente();i++)
-   {
-       cout<<"vect.["<<i<<"]= "<<vect.get_pozitie(i);
-   }
+//
+//
+//   for(i=0;i<vect.get_nrcomponente();i++)
+//   {
+//       cout<<"vect.["<<i<<"]= "<<vect.get_pozitie(i);
+//   }
 
    cout<<"Suma vectorului vect este: "<<vect.SumaVectorNrComplexe()<<'\n';
 
@@ -279,7 +294,7 @@ int main()
 
 
    cout<<'\n';
-   cout<<"Introduceti vectorii pentru care doriti sa se aplice Produsul Scalar:\n";
+   cout<<"Introduceti vectorii (cu acelasi nr de componente) pentru care doriti sa se aplice Produsul Scalar:\n";
 
    cout<<sol.ProdusScalarVectori(v,t,sol);
 
